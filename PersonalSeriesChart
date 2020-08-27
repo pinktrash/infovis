@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- including ECharts file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts.min.js"></script>
+</head>
+<body>
+    <!-- prepare a DOM container with width and height -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+
+
+    <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('main'));
+
+// specify chart configuration item and data
+    var option = {
+   
+    parallelAxis: [
+         
+        {dim: 0,
+            name: 'Where to watch',
+            type: 'category',
+            data: ['Netflix', 'Stremio', 'Amazon Prime'],
+        },
+        
+        {
+            dim: 1,
+            name: 'Genre',
+            type: 'category',
+            data: ['Sci-fi', 'Crime', 'Comedy', 'Reality competition', 'Docuseries']
+        },
+        {dim: 2, name: 'Aye'},
+        {dim: 3, name: 'IMDB'},
+         {dim: 4, name: 'RottenTomatoes'},
+            
+        {
+            dim: 5,
+            name: 'Serie',
+            type: 'category',
+            data: ['Lovecraft country', 'The marvelous mrs. Maisel', 'Umbrella academy S2', 'Hunters', 'Ill be gone in the dark', 'Dirty John Betty', 'Dare Me', 'Making the cut', 'The boys', 'The great', 'The final table', 'High score', 'Jeffrey Epstein: filthy rich', 'Prodigal son', 'The sinner S3', 'Unsolved mysteries', 'The Politician', 'Homecoming S2', 'Snowpiercer', 'Un well']
+        },
+    ],
+       
+    series: {
+        type: 'parallel',
+        lineStyle: {
+            width: 2,
+            color: '#8856a7',
+        
+    
+        },
+        data: [
+            ['Stremio','Sci-fi', 10, 7.80, 9.70,'Lovecraft country'],
+            ['Amazon Prime', 'Comedy',9.20, 8.70, 8.2,'The marvelous mrs. Maisel'],
+            ['Netflix', 'Sci-fi',  9, 8, 9, 'Umbrella academy S2'],
+            ['Amazon Prime', 'Sci-fi',8.70, 7.20, 6.40, 'Hunters'],
+            ['Stremio', 'Crime',8.70, 7.10, 9.5,'Ill be gone in the dark'],
+            ['Netflix', 'Crime',8.50, 7.20, 8,'Dirty John Betty'],
+            ['Netflix', 'Crime',8.50, 6.70, 8.50, 'Dare Me'],
+            ['Amazon Prime', 'Reality competition',8.50, 6.70, 6.70, 'Making the cut'],
+            ['Amazon Prime', 'Sci-fi',8, 8.70, 8.40, 'The boys'],
+            ['Stremio', 'Comedy',8, 7.80, 8.80, 'The great'],
+            ['Netflix', 'Reality competition',8, 7.70, 3.8, 'The final table'],
+            ['Netflix', 'Docuseries',8, 7.50, 7.80, 'High score'],
+            ['Netflix', 'Crime',7.80, 7.10, 8.10, 'Jeffrey Epstein: filthy rich'],
+            ['Stremio', 'Crime',7.50, 7.70, 5.80, 'Prodigal son'],
+            ['Netflix', 'Crime',7.20, 7.20, 9, 'The sinner S3'],
+            ['Netflix', 'Crime',7, 7.40, 7.40, 'Unsolved mysteries'],
+            ['Netflix', 'Comedy',6.50, 7.50, 4, 'The Politician'],
+            ['Amazon Prime', 'Crime',6.50, 7.50, 5.70, 'Homecoming S2'],
+            ['Netflix', 'Sci-fi',6, 7.10, 6.10, 'Snowpiercer'],
+            ['Netflix', 'Docuseries',6, 6.30, 8.30, 'Un well'],
+        ],
+
+    }
+};
+
+
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
+</body>
+</html>
